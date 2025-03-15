@@ -28,7 +28,7 @@ app = (
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.ALL, messageHandler))
 
-def updateData(context: ContextTypes.DEFAULT_TYPE):
+async def updateData(context: ContextTypes.DEFAULT_TYPE):
     rebate = mexc_spot_v3.mexc_rebate()
 
     current_time = int(time.time() * 1000)
