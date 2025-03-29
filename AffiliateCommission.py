@@ -20,6 +20,11 @@ async def messageHandler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     username = update.effective_user.username
     chat_id = update.effective_chat.id
     print(chat_id)
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=chat_id,
+        parse_mode=constants.ParseMode.HTML,
+    )
      
 app = (
     ApplicationBuilder().token(token).build()
